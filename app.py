@@ -32,7 +32,7 @@ def predict():
     html = request_json.get('html')
 
     prediction = get_prediction_from_url(url,html)
-
+    print(prediction)
     # Print the probability of prediction (if needed)
     # prob = clf.predict_proba(features_test)
     # print 'Features=', features_test, 'The predicted probability is - ', prob, 'The predicted label is - ', pred

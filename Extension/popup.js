@@ -15,8 +15,13 @@ function transfer(){
 		xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 		xhr.send(markup);
 		// Uncomment this line if you see some error on the extension to see the full error message for debugging.
-		//alert(xhr.responseText);
-		$("#div1").text(xhr.responseText);
+		alert(xhr.responseText);
+		if(xhr.responseText==='SAFE')
+		{
+			$("#div1").text(xhr.responseText);
+		}else{
+			$("#div2").text(xhr.responseText);
+		}
 		return xhr.responseText;
 	});
 }
