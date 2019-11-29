@@ -7,7 +7,6 @@ import features_extraction
 import sys
 import numpy as np
 from flask import Flask, request, abort, jsonify, Response
-import settings
 from werkzeug.serving import run_simple
 from werkzeug.wsgi import DispatcherMiddleware
 import io
@@ -16,9 +15,6 @@ import os
 from features_extraction import LOCALHOST_PATH, DIRECTORY_NAME
 
 app = Flask(__name__)
-# Load config settings
-app.config.from_object('app.settings')
-
 def get_prediction_from_url(test_url,html):
     features_test = features_extraction.main(test_url,html)
     # Due to updates to scikit-learn, we now need a 2D array as a parameter to the predict function.
@@ -52,7 +48,5 @@ def predict():
 
 
 if __name__ == '__main__':
-    application = DispatcherMiddleware(app, {
-        app.config['APPLICATION_ROOT']: app,
-    })
+    application = DispatcherMiddleware(app)
     run_simple('0.0.0.0', 8080, application, use_reloader=False)

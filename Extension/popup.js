@@ -11,7 +11,7 @@ function transfer(){
 		params="url="+tablink;
         alert(params);
 		var markup = "url="+tablink+"&html="+document.documentElement.innerHTML;
-		xhr.open("POST","http://localhost:8080/application/cyber-bot/predictPhish",false);
+		xhr.open("POST","https://boiling-brook-16497.herokuapp.com/predictPhish",false);
 		xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 		xhr.send(markup);
 		// Uncomment this line if you see some error on the extension to see the full error message for debugging.
