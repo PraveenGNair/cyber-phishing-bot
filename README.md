@@ -18,5 +18,5 @@ Make sure your pip is consistent with the Python version you are using by typing
 
 A few snapshots of our system being run on a webpage -
 
-![Google Safe](google.jpg)
+![Google Safe](google.JPG)
 _**Fig 1.** A safe website - www.google.com
